@@ -26,5 +26,10 @@ namespace Xdevs.Inscricao.Controllers
 
             return View();
         }
+
+        public ActionResult NewFunction()
+        {
+            return View();
+        }
     }
 }
