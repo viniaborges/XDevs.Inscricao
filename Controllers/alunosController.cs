@@ -10,12 +10,17 @@ using Xdevs.Inscricao.Models;
 
 namespace Xdevs.Inscricao.Controllers
 {
-    public class alunosController : Controller
+    public class AlunosController : Controller
     {
-        private context db = new context();
+        private Context db = new Context();
+
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         // GET: alunos
-        public ActionResult Index()
+        public ActionResult List()
         {
             return View(db.Alunos.ToList());
         }
@@ -27,7 +32,7 @@ namespace Xdevs.Inscricao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Alunos.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -46,7 +51,7 @@ namespace Xdevs.Inscricao.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,NomeCompleto,CPF,Email,Celular,Whatsapp,CEP,Endereco,EndNumero,EndComplemento,Bairro,Cidade,Estado")] aluno aluno)
+        public ActionResult Create([Bind(Include = "Id,NomeCompleto,CPF,Email,Celular,Whatsapp,CEP,Endereco,EndNumero,EndComplemento,Bairro,Cidade,Estado")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +70,7 @@ namespace Xdevs.Inscricao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Alunos.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -78,7 +83,7 @@ namespace Xdevs.Inscricao.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,NomeCompleto,CPF,Email,Celular,Whatsapp,CEP,Endereco,EndNumero,EndComplemento,Bairro,Cidade,Estado")] aluno aluno)
+        public ActionResult Edit([Bind(Include = "Id,NomeCompleto,CPF,Email,Celular,Whatsapp,CEP,Endereco,EndNumero,EndComplemento,Bairro,Cidade,Estado")] Aluno aluno)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +101,7 @@ namespace Xdevs.Inscricao.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Alunos.Find(id);
             if (aluno == null)
             {
                 return HttpNotFound();
@@ -109,7 +114,7 @@ namespace Xdevs.Inscricao.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            aluno aluno = db.Alunos.Find(id);
+            Aluno aluno = db.Alunos.Find(id);
             db.Alunos.Remove(aluno);
             db.SaveChanges();
             return RedirectToAction("Index");

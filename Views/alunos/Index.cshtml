@@ -1,99 +1,52 @@
-﻿@model IEnumerable<Xdevs.Inscricao.Models.aluno>
-
-@{
-    ViewBag.Title = "Index";
+﻿@{
+    ViewBag.Title = "XDevs Cursos";
 }
 
-<h2>Index</h2>
+<div id="carouselSubscription" class="carousel slide" data-ride="carousel">
+    <!-- Indicadores -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselSubscription" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselSubscription" data-slide-to="1"></li>
+        <li data-target="#carouselSubscription" data-slide-to="2"></li>
+    </ol>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeCompleto)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CPF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Celular)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Whatsapp)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Endereco)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndNumero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EndComplemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th></th>
-    </tr>
+    <!-- Imagens do carrossel -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="~/Content/Images/subs_banner1.jpg" class="img-fluid d-block" />
+            <div class="carousel-caption">
+                <h3>Curso de programação XDevs</h3>
+                <p>Conteúdo exclusivo e professores com vasta experiência no mercado!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/subs_banner2.jpg" class="img-fluid d-block" />
+            <div class="carousel-caption">
+                <h3>Programe com a XDevs</h3>
+                <p>Melhores professores do Brasil!</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/subs_banner3.jpg" class="img-fluid d-block" />
+            <div class="carousel-caption">
+                <h3>Vagas limitadas</h3>
+                <p>Está esperando o quê para começar a programar?</p>
+            </div>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeCompleto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CPF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Celular)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Whatsapp)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Endereco)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndNumero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EndComplemento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    <!-- Controle de direcoes -->
+    <a class="left carousel-control" href="#carouselSubscription" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carouselSubscription" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
 
-</table>
+<div class="jumbotron">
+    <h1>XDevs</h1>
+    <p class="lead">XDevs é uma empresa de desenvolvimento de software com vários dias de tradição no mercado.</p>
+</div>
