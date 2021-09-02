@@ -135,10 +135,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AlunosController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Aluno.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -185,7 +187,7 @@
     <Content Include="Views\Alunos\Details.cshtml" />
     <Content Include="Views\Alunos\Edit.cshtml" />
     <Content Include="Views\Alunos\List.cshtml" />
-    <Content Include="Views\Alunos\LoginArea.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -73,22 +73,4 @@ namespace Xdevs.Inscricao.Models
             Whatsapp = whatsapp;
         }
     }
-
-    //public class Admin
-    //{
-    //    [Key]
-    //    public int AdmId { get; set; }
-    //    [Display(Name = "Usuário")]
-    //    public string AdmUser { get; set; }
-    //    [Display(Name = "Senha")]
-    //    public string AdmPassword { get; set; }
-
-    //    //Construtores
-    //    public Admin(int id, string user, string password)
-    //    {
-    //        AdmId = id;
-    //        AdmUser = user;
-    //        AdmPassword = password;
-    //    }
-    //}
 }

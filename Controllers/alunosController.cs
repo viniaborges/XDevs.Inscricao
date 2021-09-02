@@ -19,47 +19,16 @@ namespace Xdevs.Inscricao.Controllers
             return View();
         }
 
-        //public ActionResult LoginArea()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Login(string getUser, string getPassword)
-        //{
-        //    string _admin = "admin";
-        //    string _password = "nimda";
-        //    if (getUser == _admin && getPassword == _password)
-        //    {
-        //        //OpenSession;
-        //        return RedirectToAction("List");
-        //    }
-        //    else
-        //    {
-        //        return HttpNotFound();
-        //    }
-
-        //}
-
-        //public ActionResult Logoff()
-        //{
-        //    return View();
-        //}
-
-
         // GET: alunos
+        [Authorize]
         public ActionResult List()
         {
-            //if ("sessionOpen")
-            //{
-                return View(db.Alunos.ToList());
-            //}
-            //else
-            //{
-            //    return View("LoginArea");
-            //}
+            ViewData["admin"] = User.Identity.Name;
+            return View(db.Alunos.ToList());
         }
 
         // GET: alunos/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -98,6 +67,7 @@ namespace Xdevs.Inscricao.Controllers
         }
 
         // GET: alunos/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -129,6 +99,7 @@ namespace Xdevs.Inscricao.Controllers
         }
 
         // GET: alunos/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
