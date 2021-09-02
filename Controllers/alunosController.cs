@@ -19,44 +19,10 @@ namespace Xdevs.Inscricao.Controllers
             return View();
         }
 
-        //public ActionResult LoginArea()
-        //{
-        //    return View();
-        //}
-
-        //public ActionResult Login(string getUser, string getPassword)
-        //{
-        //    string _admin = "admin";
-        //    string _password = "nimda";
-        //    if (getUser == _admin && getPassword == _password)
-        //    {
-        //        //OpenSession;
-        //        return RedirectToAction("List");
-        //    }
-        //    else
-        //    {
-        //        return HttpNotFound();
-        //    }
-
-        //}
-
-        //public ActionResult Logoff()
-        //{
-        //    return View();
-        //}
-
-
         // GET: alunos
         public ActionResult List()
         {
-            //if ("sessionOpen")
-            //{
-                return View(db.Alunos.ToList());
-            //}
-            //else
-            //{
-            //    return View("LoginArea");
-            //}
+            return View(db.Alunos.ToList());
         }
 
         // GET: alunos/Details/5
