@@ -9,14 +9,17 @@ namespace Xdevs.Inscricao.Models
 {
     public class Context : DbContext
     {
-        //public Context() : base("Server=localhost\\SQLEXPRESS; Database=XDevs.Inscricao; Trusted_Connection=True;") { }
-        public Context() : base("Server=tcp:xdevs.database.windows.net,1433;Initial Catalog=XDevsDB;Persist Security Info=False;User ID=xdevsadmin;Password=XD3v5Pa55w0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;") { }
+        public Context() : base("Server=localhost\\SQLEXPRESS; Database=XDevs.Inscricao; Trusted_Connection=True;") { }
+        
         public DbSet<Aluno> Alunos { get; set; }
+        public DbSet<Admin> Admins { get; set; }
+        public DbSet<AdminRole> AdminRoles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
+        public System.Data.Entity.DbSet<Xdevs.Inscricao.Models.Login> Logins { get; set; }
     }
 }

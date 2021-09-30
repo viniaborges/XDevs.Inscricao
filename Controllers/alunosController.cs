@@ -20,24 +20,28 @@ namespace Xdevs.Inscricao.Controllers
         }
 
         // GET: alunos
+        [Authorize]
         public ActionResult List()
         {
-            return View(db.Alunos.ToList());
+            return RedirectToAction("Index");
+            //return View(db.Alunos.ToList());
         }
 
         // GET: alunos/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Aluno aluno = db.Alunos.Find(id);
-            if (aluno == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aluno);
+            return RedirectToAction("Index");
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Aluno aluno = db.Alunos.Find(id);
+            //if (aluno == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(aluno);
         }
 
         // GET: alunos/Create
@@ -64,18 +68,20 @@ namespace Xdevs.Inscricao.Controllers
         }
 
         // GET: alunos/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Aluno aluno = db.Alunos.Find(id);
-            if (aluno == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aluno);
+            return RedirectToAction("Index");
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Aluno aluno = db.Alunos.Find(id);
+            //if (aluno == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(aluno);
         }
 
         // POST: alunos/Edit/5
@@ -95,18 +101,20 @@ namespace Xdevs.Inscricao.Controllers
         }
 
         // GET: alunos/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Aluno aluno = db.Alunos.Find(id);
-            if (aluno == null)
-            {
-                return HttpNotFound();
-            }
-            return View(aluno);
+            return RedirectToAction("Index");
+            //if (id == null)
+            //{
+            //    return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            //}
+            //Aluno aluno = db.Alunos.Find(id);
+            //if (aluno == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(aluno);
         }
 
         // POST: alunos/Delete/5
